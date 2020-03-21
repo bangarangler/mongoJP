@@ -39,7 +39,6 @@ router.post("/signup", (req, res, next) => {
           password: hashedPW
         })
         .then(result => {
-          console.log("result :", result);
           const token = createToken();
           res.status(201).json({ token: token, user: { email } });
         })
