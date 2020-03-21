@@ -27,17 +27,4 @@ app.use((req, res, next) => {
 app.use("/products", productRoutes);
 app.use("/", authRoutes);
 
-mongodb
-  .connect(
-    `mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPW}@mongojp-collo.mongodb.net/shop?retryWrites=true&w=majority`,
-    { useUnifiedTopology: true }
-  )
-  .then(client => {
-    console.log("connected!");
-    client.close();
-  })
-  .catch(err => {
-    console.log("err", err);
-  });
-
 app.listen(3100);
