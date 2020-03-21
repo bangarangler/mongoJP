@@ -56,6 +56,7 @@ const router = Router();
 //     image: "http://localhost:3100/images/product-watch.jpg"
 //   }
 // ];
+
 // Get list of products products
 router.get("/", (req, res, next) => {
   const queryPage = req.query.page;
